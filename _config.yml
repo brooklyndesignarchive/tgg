@@ -1,0 +1,28 @@
+title: The Gerardo Guide
+description: Design criticism by Gerardo Torres Dávila.
+author: Gerardo Torres Dávila
+url: "https://thegerardoguide.com"
+baseurl: ""
+lang: en
+timezone: America/New_York
+
+markdown: kramdown
+kramdown:
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

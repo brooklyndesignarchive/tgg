@@ -1,0 +1,19 @@
+---
+layout: default
+title: Articles
+---
+<header>
+  <h1 class="home-title">Articles</h1>
+</header>
+
+<ol class="list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="list-title">{{ post.title }}</span>
+      {% if post.dek %}<span class="list-dek">{{ post.dek }}</span>{% endif %}
+      <span class="list-meta">{{ post.date | date: "%B %Y" }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

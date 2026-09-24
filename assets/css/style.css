@@ -1,0 +1,132 @@
+:root {
+  --paper: #FFFFFF;
+  --ink: #232323;
+  --head: #232323;
+  --muted: #7A7A7A;
+  --eyebrow: #5B6773;
+  --serif: "Iowan Old Style", "Iowan Old Style BT", Georgia, "Noto Serif", "Times New Roman", serif;
+  --eyebrow-face: "Iowan Old Style", "Iowan Old Style BT", Georgia, "Noto Serif", "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #121212; --ink: #E4E1DB; --head: #F2EFEA; --muted: #8C877F; --eyebrow: #9AA6B2;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121212; --ink: #E4E1DB; --head: #F2EFEA; --muted: #8C877F; --eyebrow: #9AA6B2;
+}
+
+html, body { margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  padding-inline: 24px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+.page {
+  max-width: 38rem;
+  margin-inline: auto;
+  padding-block: clamp(3rem, 9vw, 6rem) clamp(4rem, 10vw, 8rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.site {
+  align-self: center;
+  font-family: var(--eyebrow-face);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+  text-decoration: none;
+  margin-bottom: clamp(3rem, 8vw, 5rem);
+}
+.site:hover, .site:focus-visible { text-decoration: underline; text-underline-offset: 0.35em; }
+.site:focus-visible { outline: 1px solid var(--eyebrow); outline-offset: 6px; }
+
+header { text-align: center; display: flex; flex-direction: column; align-items: center; }
+h1 {
+  font-weight: 400;
+  font-size: calc(clamp(2.5rem, 7vw, 3.75rem) * 1.05);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--head);
+  margin: 0;
+  text-wrap: balance;
+}
+.dek {
+  font-style: italic;
+  font-size: clamp(1.1875rem, 2.6vw, 1.4375rem);
+  line-height: 1.35;
+  color: var(--head);
+  margin: 0.9rem 0 0;
+  text-wrap: balance;
+}
+.meta {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.4rem 0 0;
+  line-height: 1.8;
+}
+.meta span { display: inline-block; }
+
+article {
+  margin-top: clamp(3rem, 8vw, 4.5rem);
+  font-size: clamp(1.125rem, 2.3vw, 1.3125rem);
+  line-height: 1.6;
+  hanging-punctuation: first;
+}
+article p { margin: 0; text-wrap: pretty; }
+article p + p { margin-top: 1.05em; }
+article h2 {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+  color: var(--head);
+  margin: 3.2rem 0 0.8rem;
+  text-wrap: balance;
+}
+article h2 + p, article hr + p { margin-top: 0; }
+.nb { white-space: nowrap; }
+article hr {
+  border: 0;
+  height: 1px;
+  width: 2.5rem;
+  background: var(--muted);
+  opacity: 0.6;
+  margin: 3rem auto;
+}
+article p.close {
+  font-size: calc(clamp(1.75rem, 4.4vw, 2.25rem) * 1.05);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--head);
+  text-align: center;
+  margin-top: 2.6rem;
+  text-wrap: balance;
+}
+article p.sign { font-style: italic; text-align: center; margin-top: 1.4rem; color: var(--muted); }
+
+a { color: inherit; }
+article a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.dek a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+
+/* Articles list */
+.home-title { font-size: clamp(2rem, 5vw, 2.75rem); }
+.list { list-style: none; margin: clamp(3rem, 8vw, 4.5rem) 0 0; padding: 0; }
+.list li { border-top: 1px solid color-mix(in srgb, var(--muted) 35%, transparent); }
+.list li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--muted) 35%, transparent); }
+.list a { display: flex; flex-direction: column; gap: 0.35rem; padding: 1.6rem 0; text-decoration: none; }
+.list-title { font-weight: 700; font-size: clamp(1.25rem, 2.6vw, 1.5rem); line-height: 1.25; color: var(--head); }
+.list a:hover .list-title, .list a:focus-visible .list-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.list a:focus-visible { outline: 1px solid var(--muted); outline-offset: 4px; }
+.list-dek { font-style: italic; font-size: 1.125rem; line-height: 1.4; color: var(--ink); }
+.list-meta { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; }

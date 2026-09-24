@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="page">
+    <a class="site" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {{ content }}
+  </div>
+</body>
+</html>
