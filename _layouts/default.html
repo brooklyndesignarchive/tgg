@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="page">
-    <a class="site" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% unless page.home %}<a class="site" href="{{ '/' | relative_url }}">{{ site.title }}</a>{% endunless %}
     {{ content }}
   </div>
 </body>

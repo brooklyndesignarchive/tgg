@@ -130,3 +130,48 @@ article a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
 .list a:focus-visible { outline: 1px solid var(--muted); outline-offset: 4px; }
 .list-dek { font-style: italic; font-size: 1.125rem; line-height: 1.4; color: var(--ink); }
 .list-meta { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; }
+
+/* Homepage sections */
+.home-section { margin-top: clamp(3.5rem, 9vw, 5rem); font-size: clamp(1.125rem, 2.3vw, 1.3125rem); line-height: 1.6; }
+.home-section h2 {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+  color: var(--head);
+  margin: 0 0 0.8rem;
+}
+.home-section p { margin: 0; text-wrap: pretty; }
+.home-section p + p { margin-top: 1.05em; }
+.home-section a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.home-section .list { margin-top: 0; }
+
+.signup { display: flex; gap: 0.5rem; margin-top: 1.2rem; }
+.signup input, .signup button {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--muted) 55%, transparent);
+  border-radius: 0;
+  padding: 0.6rem 0.8rem;
+}
+.signup input { flex: 1; min-width: 0; }
+.signup input::placeholder { color: var(--muted); }
+.signup button { cursor: pointer; background: var(--head); color: var(--paper); border-color: var(--head); }
+.signup input:focus-visible, .signup button:focus-visible { outline: 1px solid var(--eyebrow); outline-offset: 2px; }
+@media (max-width: 30rem) { .signup { flex-direction: column; } }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.sponsor {
+  margin-top: clamp(4rem, 10vw, 6rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid color-mix(in srgb, var(--muted) 35%, transparent);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.sponsor-label { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.sponsor-name { font-style: italic; color: var(--ink); }

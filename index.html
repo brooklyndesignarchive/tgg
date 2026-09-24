@@ -1,19 +1,50 @@
 ---
 layout: default
-title: Articles
+title: The Gerardo Guide
+home: true
 ---
 <header>
-  <h1 class="home-title">Articles</h1>
+  <h1>{{ site.title }}</h1>
+  <p class="dek">[Subheader]</p>
 </header>
 
-<ol class="list">
-  {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url | relative_url }}">
-      <span class="list-title">{{ post.title }}</span>
-      {% if post.dek %}<span class="list-dek">{{ post.dek }}</span>{% endif %}
-      <span class="list-meta">{{ post.date | date: "%B %Y" }}</span>
-    </a>
-  </li>
-  {% endfor %}
-</ol>
+<section class="home-section" id="archive">
+  <h2>Archive</h2>
+  <ol class="list">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <span class="list-title">{{ post.title }}</span>
+        {% if post.dek %}<span class="list-dek">{{ post.dek }}</span>{% endif %}
+        <span class="list-meta">{{ post.date | date: "%B %Y" }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="home-section" id="newsletter">
+  <h2>Newsletter</h2>
+  <p>[One line on what subscribers get and how often.]</p>
+  <!-- [Newsletter provider not chosen yet. For Buttondown, action is https://buttondown.com/api/emails/embed-subscribe/USERNAME] -->
+  <form class="signup" action="" method="post">
+    <label for="email" class="visually-hidden">Email address</label>
+    <input type="email" name="email" id="email" placeholder="Email address" autocomplete="email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<section class="home-section" id="about">
+  <h2>About</h2>
+  <p>[About text.]</p>
+</section>
+
+<section class="home-section" id="contact">
+  <h2>Contact</h2>
+  <p>[Contact email or line.]</p>
+</section>
+
+<aside class="sponsor">
+  <span class="sponsor-label">Supported by</span>
+  <span class="sponsor-name">[Sponsor]</span>
+</aside>
