@@ -24,5 +24,6 @@ defaults:
 
 exclude:
   - README.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
